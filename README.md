@@ -232,10 +232,10 @@ Introduction to Error Research and Error Management
 5. Standard algorithm for correcting errors.
 6. Prevention of errors.
 7. Afterword.
-
-
-
-
+.
+.
+.
+.
 1. Introduction
 
 1.1. History of the issue.
