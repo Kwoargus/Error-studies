@@ -351,44 +351,72 @@ It would be most correct to begin consideration of this topic with an analysis o
 2.1. Syntactic - errors in writing operators of the programming language. Modern software development environments, such as IDEA, NetBeans, Eclips help the developer to minimize the number of errors made by constantly monitoring the syntax and giving signals about the made syntax errors in the form of highlighting incorrectly written code elements in red, or underlining code fragments containing hidden syntax errors with a red wavy line. For example, a mismatch between the types of variables passed to the input of a function and the types of variables specified in the definition of this function.
 
 2.2. Configuration - errors of all kinds of settings in various configuration files of the project, development environment, runtime environment, operating system, etc.
+
 2.2.1. Lack of necessary libraries.
+
 2.2.2. The libraries used in the application under development do not correspond to the purposes of their use (for example, java.utils.date and java.sql.date).
+
 2.2.3. Incorrectly specified parameters in the project configuration files, such as:
+
 2.2.3.1. pom.xml,
+
 2.2.3.2. build.gradle,
+
 2.2.3.3. application.property
+
 2.2.3.4. application.yaml
+
 2.2.3.5. application-docker.property
+
 2.2.3.6. lombok.config
+
 2.2.3.7. Dockerfile
-2.2.3.8.
+
 2.2.4. Incorrectly specified parameters in configuration files stored outside the application
+
 2.2.4.1. On the configuration server.
+
 2.2.4.2. In a DBMS — for example, in PostgreSQL, the default number of connections to the database is limited to 100, and when this number is exhausted, an access error occurs when trying to establish the 101st connection, which can be fixed by simply increasing the max_connections parameter in postgresql.conf.
-2.2.5.
 
 2.3. Integration - various errors can also occur when components of complex systems interact with each other. In software development, these interactions are called integrations. Typical integration errors:
+
 2.3.1. mismatch of connection establishment protocols,
+
 2.3.2. connection establishment address errors,
+
 2.3.3. errors in parameters used when establishing a connection,
+
 2.3.4. mismatch of data transfer protocols.
+
 
 2.4. Logical - errors in the construction of processing the data used that violate the application logic of the system (for example, calculating the value of an arithmetic expression containing a division operation, given that the value of the expression in the denominator, for some reason, turns out to be zero).
 2.4.1. Algorithmic - errors in the implementation of standard (or individually developed) algorithms. A typical example is filtering a list with a deliberately impossible selection condition.
+
 2.4.2. Structural - associated with the use of such structures as List, Map, Stack, Queue, Tree, etc.
+
 2.4.3. Errors associated with the DB:
+
 2.4.3.1. inconsistency between the structure of tables in the DB and the structure of classes receiving data from the DB or methods processing this data.
+
 2.4.3.2. invalid data in the DB,
+
 2.4.3.3. incorrect use of foreign keys of tables and relationships of the type "one-to-many", "many-to-many",
+
 2.4.4. Architectural - the structure of the application, reflected in the architectural diagrams, may contain serious flaws that lead to great difficulties during development and, as a result, be the basis for the emergence of serious errors. For example, overloading application components with multiple heterogeneous functionality often leads to the infamous "high coupling", which in turn, at fairly advanced stages of development leads to errors like "pulled by the ear - the nose fell off"
+
 2.4.5. Date errors.
+
 In practice, a large number of different date recording formats are used. Separators may differ, for example, 2024.10.15 and 2024-10-15. The sequence of date components may differ, for example, 2024.10.15 and 15/10/2024. The date format may or may not include time, separator T, time zone Z+003, etc. The date can also be stored as a large integer - the number of seconds elapsed since 0 hours, 0 minutes, 0 seconds on January 1, 1970.
 Equating the values ​​of date variables with different formats leads to syntax errors, and incorrect conversion from one format to another leads to logical property errors.
 
 2.5. System - incompatibility of the used components and capabilities of the operating system.
+
 2.5.1. Incompatibility errors of the OS version and the versions of the JRE/JDK used.
+
 2.5.2. Incompatibility errors of an outdated OS version and a new version of the integrated development environment or the libraries or other tools used.
+
 2.5.3. Incompatibility errors of a modern OS version and outdated versions of the integrated development environment or the libraries or other tools used.
+
 2.5.4. Errors in the use of system resources with restricted access.
 
 2.6. Access errors - frequently developed code is used
@@ -399,23 +427,34 @@ Equating the values ​​of date variables with different formats leads to synt
 The classification of errors is closely related to the reasons for their occurrence. To simplify the task, we will consider errors that are caused by one reason. Complex errors, caused not by one but by several reasons at once, should be the subject of a separate study.
 
 3.1. Incorrect implementation of the code by the developer - syntax errors, algorithmic errors, incorrect use of structures (for example, in Java objects from the Collection framework), errors in asynchronous exchange with external resources, Flux errors, etc.
+
 3.2. Incorrect settings of development tools - in the project files *.yml, *.groovy, *.cfg, etc. or in classes such as DataConfig.java, CustomOpenAPI.java, etc.
+
 3.2.1. Incorrect settings of the collector — in Java, such collectors as Ant, Maven, Gradle, etc. are used, and their work can also cause errors due to incorrect settings, communication failures (inability to pull up dependencies), conflicts with other tools.
+
 3.2.2. Incorrect settings of the JVM (Java virtual machine) and JRE (Java runtime environment) — the environment for executing program code can also be a source of errors, since it also contains its own settings, which may be incorrect and version conflicts and integration errors with other components are possible.
+
 3.2.3. Incorrect use of resources and OS parameters — errors in interaction with various components of the operating system such as device drivers, network services, etc.
+
 3.3. Incorrect implementation of interaction of the developed application with the components of the application environment (microservices) — integration errors.
+
 3.3.1. errors in the use of interaction protocols.
+
 3.3.2. errors in call formats.
+
 3.4. Errors accessing the database
+
 3.4.1. Incorrect network address and/or port and/or login and/or password.
+
 3.4.2. Incorrectly selected or configured data exchange protocol.
-3.4.3.
 
 3.5. Communication errors or incorrect settings of subsystems providing communication between the involved resources
 3.5.1. Incorrect format/parameters of REST calls.
+
 3.5.2. Incorrect format/parameters of message broker calls.
 
 3.6. Mismatch of versions of used applications/libraries/drivers
+
 3.6.1. The versions of the OS, device drivers, development environment (IDEA/NetBeans), JRE, assembler (Maven/Gradle), auxiliary utilities and used SDK components may not match each other in terms of compatibility.
 
 
@@ -424,7 +463,9 @@ The classification of errors is closely related to the reasons for their occurre
 Fixing an error requires an unambiguous understanding of the cause of its occurrence, and for this, sufficiently complete information containing all the necessary details is needed. Such information can be obtained from the sources described below.
 
 4.1. Automatic logs — the development environment, plugins, Java machine, operating system, etc. automatically generate a large number of logs, there are several logging modes from the least informative "info" mode to the most detailed "trace". The logs contain messages describing everything that happens during the execution of the application and, first of all, messages about failures that have occurred. Logs are the most important source of information about errors.
+
 4.2. Exceptions — many languages ​​have a mechanism for handling exceptional situations, the so-called "Exceptions". When exceptions occur, logging is almost always done and detailed messages about the exception that occurred and the reasons for its occurrence are output to the console.
+
 4.3. In addition to these cases, the developer has the opportunity to do his own, auxiliary logging. It helps to track the prerequisites for the occurrence of errors by placing messages in the log about the execution of significant for understanding the situation in which the error occurred and the state of significant variables at that moment.
 
 
@@ -448,9 +489,13 @@ The sequence of actions, in my opinion, should look as described below.
 The ability to correctly read error messages is an important skill that a developer does not necessarily have initially, but is developed in the process of work.
 
 5.1.1. Firstly, it is important to understand that when a failure occurs, the list of errors in the log can be very long - up to a hundred lines. As a rule, all these errors are the result of some "primary" error indicated in the first line of the list. It is this error that must be analyzed first and its cause determined.
+
 5.1.2. Often the message about the "root cause" error is very long and difficult to understand. For example, the key words for understanding "column with name user_surname not exist in table user" can be at the very end of a very long phrase, and by the time the developer reads to this place, he may come across several other "candidates for the role of the cause". If the developer starts checking all versions starting from the first one, searching the web for descriptions of similar causes, checking the work of the found recipes, combining and experimenting, then, in the end, he (the developer) will spend an unreasonably large amount of his time. To avoid these annoying losses of time, it is advisable to read the message to the end before building versions of the causes, evaluate each discovered "candidate for the role of the cause" from the point of view of the probability that the cause is in it, and only then start checking each version separately in turn.
+
 5.1.3. Often the cause of the error lies in unacceptable values ​​of variables, the assignment of which occurred before the execution of the command that caused the error, and to understand the cause, it is necessary to view the values ​​of these variables (if they are logged). Therefore, for a better understanding of the causes of the error, it is useful to read the logged values ​​of the directly involved variables, so that it is possible to view their current values ​​​​and check their correctness. For example, the frequently seen null in the value of some variable clearly explains the reason for throwing a NullPointerException. In order to be able to detect errors this way, it is recommended to log all significant variables without grumbling and laziness.
+
 5.2. Searching for the causes of errors.
+
 In simple cases, from the error message, you can easily understand the cause of its occurrence and how to fix it. For example:
 
 2023-11-07 13:52:26.266 ERROR 24188 o.h.engine.jdbc.spi.SqlExceptionHelper: No const columns found in this ResultSet.
@@ -474,6 +519,7 @@ In such cases, you need to try to build several versions of the reasons errors a
 The most unpleasant thing is when no guesses arise at all ... . In such cases, if the logs allow you to localize the line or block of code in which the error occurred, it makes sense to try to find another solution - rewrite the faulty code using an alternative an approach that accomplishes the same task.
 
 5.3. Building hypotheses about the probable cause of the error.
+
 5.3.1. The first thing to do when processing an error is to carefully read all the messages related to the failure.
 
 5.3.2. After reading the messages, you should try to classify the error - whether it relates to code errors, or to configuration errors, or to integration errors, or to system interaction errors, or to access errors, etc.
@@ -481,26 +527,34 @@ The most unpleasant thing is when no guesses arise at all ... . In such cases, i
 5.3.3. Based on the resulting classification (ideally, if it is one class of errors), suggest a possible cause for each class - i.e. formulate "hypotheses".
 
 5.4. Testing hypotheses.
+
 5.4.1. Each hypothesis should be assessed in terms of its probability.
 
 5.4.2. Starting with the most probable, test each hypothesis.
 
 5.5. Searching the Internet for descriptions of similar errors.
+
 5.5.1. Searching for information about errors on the Internet is also associated with certain difficulties. This is due to the fact that the error message in the log can be quite cumbersome.
 You can paste the entire message into the search bar (google or yandex or duckduckgo), then the search service itself will decide which keywords have priority and, when issuing, will sort the links in order of relevance to these keywords. Useful links may end up at the bottom of a long list and will not be visible at all.
 The best way is to paste into the query only that part of the error message that most likely contains indications of the cause of the error. I usually select the meaningful part of the message by the exclusion method - I discard those parts of the message that contain "standard" "preliminary" mentions of the components used in developing the application, for example ...org.springframework.boot:spring-boot-starter... . After such "cleaning", the message is shortened and becomes more transparent.
+
 5.5.2. Another important aspect is that the formation of a search query (for some time now it has become customary to call prompt engineering) is associated with an understanding of the mechanisms of search services.
+
 Modern search engines use not only giant RegularExpressions, but much more often neural networks implementing NLP (natural language processing) algorithms. These can be relatively simple solutions based on Embedding + CosinusDistance, and it is possible to use architectures such as Generative Pretrained Transformer (GPT).
 The simplest and quite effective rule for constructing a query is to arrange keywords in the query in descending order of their importance for the meaning of the query, i.e. the most “important” words should come first, then clarifying ones, and then narrowing the search range. It should be taken into account that the shorter the query, the greater the volume of results - the wider the coverage of potentially relevant links, but also the probability of “overlooking” the most useful link in the set of links issued is higher. On the other hand, the longer the query, the fewer unhelpful links will be returned, but the probability that the search engine will not include the most useful link in the results is also higher.
+
 5.6. Brainstorming. This method should be used when all "imaginable" versions of the failure causes have been checked and none have yielded a result, and the search process has started to "go in circles". During brainstorming, it is necessary to involve a sufficient number of team members in a variety of roles, not only backend programmers, but also frontend developers and testers, SQL developers and even analysts - a fresh look from any of them can draw attention to a factor that was "usually" ignored before and this will become a clue that will allow you to get to the bottom of a deeply hidden cause.
+
 5.7. Search for workarounds to solve the problem. Often, the implemented solution, in which a failure occurs that cannot be corrected, is the first thing that came to mind during the first attempt to implement the task, and this solution is not necessarily the best. If you have spent too much time searching for the cause of the failure, then this is a good reason to think about the fact that the problem may have other solutions and it makes sense to try to implement one of them.
 
 6. Error Prevention
 
 6.1. Automatic Syntax Check in the Development Environment.
 As already mentioned, all integrated development environments (IDE) implement automatic check of the correctness of the program code syntax, the correctness of the class and component structure, as well as the completeness and consistency of the project as a whole if it uses the appropriate framework (SpringBoot, Vue, Angular, etc.). It is very important to be able to use these features to the fullest extent - before starting the project build, it is absolutely necessary to ensure that the code does not contain any marks indicating any errors. Almost always, when you hover the mouse cursor over an error mark, a context menu appears with possible causes or suggestions for correction. Most often, an error can be corrected simply by selecting one of the items in this menu. However, sometimes situations arise when none of the menu items provides an opportunity to correct the error or at least understand the reason for its occurrence. In this regard, there is one life hack - most often the description of the cause of the error in the IDE context menu is given very briefly, but if you launch the application (or run the build), then during the launch process the "incomprehensible" error will also be detected and a more detailed description of the causes will be displayed in the log, which will allow you to understand what needs to be done to fix this error.
+
 6.3. SonarCube.
 When rolling out a project to a stand for its use by a wide range of users, a "code cleanliness" control tool, such as SonarCube, is used at one of the stages in the deployment pipeline. This allows you to identify code fragments in which the developer was careless or deviated from generally accepted development standards or consciously / subconsciously obscured (obfuscated) the code. SonarCube has more than 500 rules, checking which allows you to identify places with poorly written code. Deviations from the rules of clean code are always fertile ground for errors to occur, if not right now, then during future improvements to the application. Following the rules of clean code is absolutely necessary and therefore automatic testing by SonarCube must be included in the deployment pipeline.
+
 6.2. Unit testing.
 Writing Unit tests is an important tool for preventing "hidden" errors that can occur "by themselves". For example, careless "data cleaning" in the database can lead to some tests failing. Therefore, well-written Unit tests can "warn" the developer about problems that have arisen at the stage of application launch, when it is not too late to make the necessary corrections, which is not as painful as when a failure occurs during operation and can lead to financial or reputational losses for the customer enterprise, as well as reputational and financial losses for the developer himself.
 
