@@ -175,10 +175,15 @@ https://shlahter.livejournal.com/36109.html
 К сожалению, часто после прочтения сообщения возникает сразу несколько догадок о возможных причинах, например:
 
 2023-11-07 14:20:45.097 DEBUG 9520 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/application/v1/project/bd196087-7eb1-4a38-9d64-b76abc6667f0", parameters={}
+.
 2023-11-07 14:20:45.106  WARN 9520 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+.
 2023-11-07 14:20:45.106 DEBUG 9520 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 405 METHOD_NOT_ALLOWED
+.
 2023-11-07 14:20:45.115 DEBUG 9520 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+.
 2023-11-07 14:20:45.118 DEBUG 9520 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+.
 2023-11-07 14:20:45.143 DEBUG 9520 --- [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
 
 читая это сообщение можно предположить, что причина в том, что
