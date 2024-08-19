@@ -20,6 +20,7 @@ The English version of the text follows immediately after the Russian text.
 1. Введение
 
 1.1. История вопроса.
+
 Уже делались попытки разработать дисциплину изучающую ошибки как феномен, правда, это касалось больше вопросов лингвистики.
 Эрратология - (от лат errata — ошибки), — это прикладное направление лингвистики, изучающее различные случаи нарушений собственно Языковых норм (см.), Коммуникативных норм (см.) и Этико-речевых норм (см.).
 Выделяется в противовес Ортологии (см.), изучающей языковую норму, её функционирование и историческую изменчивость в соотношении с системой языка и узусом. [https://didacts.ru/termin/oshibkovedenie.html]
@@ -36,6 +37,7 @@ https://shlahter.livejournal.com/36109.html
 Во всех этих источниках ошибковедение рассматривается либо с узко профессиональной точки зрения либо довольно поверхностно. Нигде не предлагается полноценная классификация ошибок, не рассматриваются наиболее часто встречающиеся причины возникновения ошибок, эффективные методы поиска причин ошибок, не даются оценки затрат времени на обработку ошибок, не рассматривается эффективность мер по снижению вероятности возникновения ошибок до приемлемого минимума, не предлагаются метрики позволяющие оценить относительное количество ошибок, не делается попыток понять каким должен быть этот минимум. 
 
 1.2. Мотивация разработки курса.
+
 Ошибки возникают всегда в любой деятельности, если это не самые примитивные виды работ. Если взять, например, работу разработчика, программиста, то при том уровне сложности задач, которые приходится решать, при той многочисленности технологий и инструментов, которые приходится применять, при той комплексности методов и подходов, которые приходится использовать, писать код «сразу без ошибок» практически невозможно. Даже при самом тщательном и дальновидном продумывании и планировании своей работы исключить возникновение ошибок невозможно. 
 Процессом исправления ошибок может быть выстроен по разному. 
 При неэффективной организации, работник (например разработчик) тонет в мириадах «неисправимых» ошибок, очень подолгу мучается с поиском их причин, и на это уходит львиная доля времени всей разработки,  как следствие срываются сроки, код получается низкого качества, и он плохо работает при его практической эксплуатации (в проде). 
@@ -45,6 +47,7 @@ https://shlahter.livejournal.com/36109.html
 
 
 1.3. Предмет изучения и определения.
+
 Происхождение термина - «ошибка» буквально понималась как промах, неточное попадание при ударе.
 Происхождение слова ошибка в этимологическом онлайн-словаре Успенского Л. В.[https://lexicography.online/etymology/о/ошибка]
 
@@ -142,6 +145,7 @@ https://shlahter.livejournal.com/36109.html
 
 
 2.7.1. Часто для получения доступа к каким-то ресурсам необходимо установить настроить и запустить VPN доступ, без которого работа приложения будет блокироваться и будет возникать множество ошибок. 
+
 2.7.2. В соответствии с требования правительства и других государственных структур (например в связи с зарубежными санкциями) служба ИБ предприятия может запретить использование некоторых видов ПО или иных средств, что в свою очередь может вызывать сбои в работе тех продуктов, которые игнорируют эти ограничения.
 Я не ставлю себе цель составить справочник ошибок, заглянув в который можно было бы быстро найти причину ошибки, это практически невозможно ввиду их огромного разнообразия и постоянного пополнения множества ошибок новыми видами, что вызвано постоянным обновлением и пополнением инструментов и средств разработки. Моя цель предложить эффективный метод поиска причин ошибок (и их исправления), позволяющий сократить затраты времени на отладку ПО. 
 
@@ -186,6 +190,7 @@ https://shlahter.livejournal.com/36109.html
 4. Объективные источники информации о возникших ошибках
 
 Исправление ошибки предполагает однозначное понимание причины её возникновения, и для этого нужна достаточно полная информация содержащая все необходимые сведения. Такая информация может быть получена из ниже описанных источников. 
+
 4.1. Автматические логи — среда разработки, плагины, Java-мишина, операционная система и пр. автоматически генерируют большое количество логов, существует несколько режимов логгирования от наименее информативного режима «info» и до максимально подробного «trace». В логах содержится сообщения с описанием всего происходящего во время выполнения приложения и, в первую очередь сообщения о возникших сбоях. Логи это важнейший источник информации об ошибках.   
 
 4.2. Исключения — во многих языках реализован механизм обработки исключительных ситуаций, так называемых «Исключений» или Exceptions. При возникновении исключений почти всегда делается логгирование и в консоль выдаются подробное сообщения о возникшем исключении и причинах его возникновения.
@@ -197,12 +202,19 @@ https://shlahter.livejournal.com/36109.html
 5. Стандартный алгоритм исправления ошибки.
 
 Устранять ошибки можно по разному. 
+
 Кто-то целиком и полностью полагается на свои опыт и интуицию и по первым словам сообщения догадывается о причинах ошибки и понимает что нужно сделать чтобы её исправить. Обычно на это способны разработчики уровня senior, с многолетним, разнообразным опытом.
+
 Другие все надежды возлагают на всемогущий google и при малейшем непонимании копируют сообщение об ошибке в поисковую строку гугла и внимательно вычитывают многочисленные ссылки на найденные упоминания подобных сообщений. Это больше свойственно разработчикам уровня junior и midle. Беда в том, что частенько ни одна из найденных ссылок не предлагает варианта решения, который дал бы ожидаемый результат — после проверки десятков вариантов, ошибка остаётся не устранённой. 
+
 Начинающие разработчики часто вынуждены просить помощи у более опытных коллег, поскольку испытывают затруднения даже с чтением логов и правильным  вычленением содержательных фрагментов из сообщения об ошибке. Беда если опытные коллеги сильно заняты или вовсе отсутствуют.
-Справедливости ради надо сказать, что иногда возникают ошибки, сообщения о которых вызывают затруднения в понимании причин даже у очень опытных сеньёров. И для того чтобы разобраться с такими ошибками приходится собираться всей командой и устраивать «мозговой штурм».  
+
+Справедливости ради надо сказать, что иногда возникают ошибки, сообщения о которых вызывают затруднения в понимании причин даже у очень опытных сеньёров. И для того чтобы разобраться с такими ошибками приходится собираться всей командой и устраивать «мозговой штурм». 
+
 Хуже всего когда разработчик, не находя понятной причины возникновения ошибки начинает хаотически метаться между логом, гуглом, обращениями к коллегам и сомнительными экспериментами, а спустя какое-то время осознаёт, что уже давно ходит по замкнутому кругу из которого нет выхода. Такие ситуации могут стать причиной переутомления, выгорания, депрессии и разочарования в профессии.  
+
 Основываясь на многолетнем опыте можно утверждать, что процесс поиска причины ошибки и её исправления может быть систематизирован и оптимизирован, а это позволит значительно сократить время которое приходится тратить на отладку ПО.
+
 Я попытался предложить типовую последовательность действий предпринимаемых при возникновении ошибки, которая позволяла бы максимально быстро понять причину в максимально широком диапазоне разнообразия ошибок.  
 
 Последовательность действий,  на мой взгляд, должна выглядеть так как это описано ниже. 
@@ -210,6 +222,7 @@ https://shlahter.livejournal.com/36109.html
 5.1. Чтение сообщений об ошибках и их анализ.
 
 Умение правильно читать сообщения об ошибках, это важный навык, который не  обязательно имеется у разработчика изначально, а вырабатывается в процессе работы. 
+
 5.1.1. Во-первых важно понимать что, при возникновении сбоя список ошибок в логе может быть очень длинным — до сотни строк. Как правило, все эти ошибки оказываются следствием некоторой «первичной» ошибки указанной в первой строке списка. Именно эту ошибку и надо проанализировать в первую очередь и определить её причину.
 
 5.1.2. Часто сообщение о «первопричинной» ошибке оказывается очень длинным и сложным для понимания. Например, ключевые для понимания слова «column with name user_surname not exist in table user» может находиться в самом конце очень длинной фразы и пока разработчик дочитает до этого места, он может встретить несколько других «кандидатов на роль причины». Если разработчик начнёт проверять все версии начиная с первой, искать в сети описания похожих причин, проверять работу найденных рецептов, комбинировать и экспериментировать, то, в итоге, он (разраб) потратит неоправданно много своего времени. Чтобы избежать этих досадных потерь времени, желательно прежде чем строить версии о причинах, дочитать сообщение до конца, оценить каждого обнаруженного «кандидата на роль причины» с точки зрения вероятности того что причина именно в нём, и только потом приниматься за проверку каждой версии в отдельности по очереди. 
@@ -233,8 +246,11 @@ https://shlahter.livejournal.com/36109.html
 2023-11-07 14:20:45.143 DEBUG 9520 --- [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json];
 
 читая это сообщение можно предположить, что причина в том, что
+
 -  «Request method 'GET' not supported», то есть ошибка в наботе ключевого слова “GET” — буквы E или T набраны в русской раскладке;
+  
 - или в том что «"ERROR" dispatch for GET "/error", parameters={}», то есть сделана ошибка в формате описания ендпоинта для команды GET
+
 - или в том что «Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]», то есть сделана ошибка в формате json объекта, получаемого при вызове.
 
 В таких случаях нужно попытаться построить несколько версий причин ошибки и все их проверить.
@@ -280,9 +296,11 @@ https://shlahter.livejournal.com/36109.html
 Как уже было сказано, все интегральные среды разработки (IDE) реализуют автоматический контроль правильности синтаксиса программного кода, корректности структуры классов и компонентов, а также полноты и непротиворечивости проекта в целом если он использует соответствующий фреймворк (SpringBoot, Vue, Angular и пр.). Очень важно уметь использовать эти возможности в полной мере — прежде чем запускать сборку проекта абсолютно необходимо добиться отсутствия в коде любых пометок указывающих на какие бы то ни было ошибки. Почти всегда при наведении курсора мыши на пометку об ошибке выпадает контекстное меню с возможными вариантами причин или предложениями по исправлению. Чаще всего ошибку можно исправить просто выбрав один из пунктов этого меню. Однако, иногда возникают ситуации когда ни один из пунктов меню не предоставляет возможности исправить ошибку или хотя бы понять в чём причина её возникновения. В связи с этим есть один лайфхак — чаще всего описание причины ошибки в контекстном меню IDE даётся очень сжато, но если сделать запуск приложения (или запустить сборку), то в процессе выполнения запуска «непонятная» ошибка также будет обнаружена и в лог будет выведено более подробное описание причин, что позволит понять что нужно сделать, что бы исправить эту ошибку .   
 
 6.2. SonarCube.
+
 При выкатке проекта на стенд для его использования широким кругом пользователей, в конвейере развёртывания на одном из этапов используется средство контроля «чистоты кода», например SonarCube. Это позволяет выявить фрагменты кода, в которых разработчик допустил небрежности или отступил от общепринятых стандартов разработки или сознательно/подсознательно затемнил (обфусцировал) код. У SonarCube больше 500 правил, проверка которых позволяет определить места с некачественно написанным кодом. Отступления от правил чистого кода это всегда благодатная почва для возникновения ошибок, если не прямо в данный момент, то при будущих доработках приложения. Следовать правилам чистого кода совершенно необходимо и поэтому автоматическая проверка SonarCube-ом обязательно должна быть включена в конвейер развёртывания. 
 
 6.3. Unit-тестирование.
+
 Написание Unit-тестов важный инструмент профилактики «скрытых» ошибок которые могут возникать как бы «сами собой». Например неосторожная «чистка данных» в БД может приводить к тому, что какие-то тесты выдадут сбой. Поэтому качественно написанные Unit-тесты способны «предупредить» разработчика о возникших проблемах ещё на этапе запуска приложения, когда ещё не поздно внести необходимые исправления, что не так болезненно, чем когда сбой возникает в процессе эксплуатации и может привести к финансовым или репутационным потерям предприятия-заказчика, а также репутационным и финансовым потерям уже самого разработчика. 
 
 
@@ -313,6 +331,7 @@ Introduction to Error Research and Error Management
 1. Introduction
 
 1.1. History of the issue.
+
 There have already been attempts to develop a discipline studying errors as a phenomenon, although this concerned more issues of linguistics.
 Erratology - (from Latin errata - errors), is an applied direction of linguistics that studies various cases of violations of the actual Language norms (see), Communicative norms (see) and Ethical-speech norms (see).
 It stands out in contrast to Orthology (see), which studies the language norm, its functioning and historical variability in relation to the language system and usage. [https://didacts.ru/termin/oshibkovedenie.html]
@@ -329,14 +348,21 @@ https://shlahter.livejournal.com/36109.html
 In all these sources, Error studies is considered either from a narrow professional point of view or rather superficially. Nowhere is a full classification of errors offered, the most common causes of errors, effective methods for finding the causes of errors are considered, the time spent on error processing is not estimated, the effectiveness of measures to reduce the probability of errors to an acceptable minimum is not considered, metrics are not offered to assess the relative number of errors, no attempt is made to understand what this minimum should be.
 
 1.2. Motivation for developing a course.
+
 Errors always occur in any activity, unless it is the most primitive type of work. If we take, for example, the work of a developer, a programmer, then with the level of complexity of the tasks that have to be solved, with the multitude of technologies and tools that have to be used, with the complexity of the methods and approaches that have to be used, it is almost impossible to write code “straight away without errors”. Even with the most careful and far-sighted thinking and planning of your work, it is impossible to exclude the occurrence of errors.
+
 The process of error correction can be built in different ways.
+
 With an ineffective organization, an employee (for example, a developer) is drowning in myriads of “uncorrectable” errors, suffers for a very long time with the search for their causes, and this takes the lion's share of the entire development time, as a result, deadlines are missed, the code is of low quality, and it does not work well in its practical use (in production).
+
 With the correct implementation of the error correction process, the employee (developer) spends a relatively small amount of time on error correction and ultimately receives effective, high-quality code.
+
 It is important to understand that in large applications, with the smartest approach, it is impossible in principle to reduce the number of errors to zero. There is a certain minimum number of errors, such that correcting one of them leads to the emergence of two new ones. It is important to ensure that the presence of these errors does not make the application unusable and is almost invisible to the user.
+
 To date, a lot of experience has already been accumulated in error processing, searching for causes, control methods and methods for minimizing the number of errors. Obviously, there is a need to analyze this experience, systematize the accumulated knowledge and formulate basic principles and approaches to working with errors.
 
 1.3. Subject of study and definition.
+
 Origin of the term - "error" was literally understood as a miss, an inaccurate hit when striking.
 Origin of the word error in the online etymological dictionary of Uspensky L.V. [https://lexicography.online/etymology/о/ожига]
 
@@ -390,6 +416,7 @@ It would be most correct to begin consideration of this topic with an analysis o
 
 
 2.4. Logical - errors in the construction of processing the data used that violate the application logic of the system (for example, calculating the value of an arithmetic expression containing a division operation, given that the value of the expression in the denominator, for some reason, turns out to be zero).
+
 2.4.1. Algorithmic - errors in the implementation of standard (or individually developed) algorithms. A typical example is filtering a list with a deliberately impossible selection condition.
 
 2.4.2. Structural - associated with the use of such structures as List, Map, Stack, Queue, Tree, etc.
@@ -407,6 +434,7 @@ It would be most correct to begin consideration of this topic with an analysis o
 2.4.5. Date errors.
 
 In practice, a large number of different date recording formats are used. Separators may differ, for example, 2024.10.15 and 2024-10-15. The sequence of date components may differ, for example, 2024.10.15 and 15/10/2024. The date format may or may not include time, separator T, time zone Z+003, etc. The date can also be stored as a large integer - the number of seconds elapsed since 0 hours, 0 minutes, 0 seconds on January 1, 1970.
+
 Equating the values ​​of date variables with different formats leads to syntax errors, and incorrect conversion from one format to another leads to logical property errors.
 
 2.5. System - incompatibility of the used components and capabilities of the operating system.
@@ -474,18 +502,23 @@ Fixing an error requires an unambiguous understanding of the cause of its occurr
 Errors can be fixed in different ways.
 
 Some rely entirely on their experience and intuition and guess the causes of the error from the first words of the message and understand what needs to be done to fix it. Usually, senior-level developers with many years of diverse experience are capable of this.
+
 Others place all their hopes on the almighty Google and, at the slightest misunderstanding, copy the error message into the Google search bar and carefully read the numerous links to the found mentions of similar messages. This is more typical of junior and midle-level developers. The trouble is that often none of the found links offers a solution that would give the expected result - after checking dozens of options, the error remains unresolved.
+
 Beginner developers often have to ask for help from more experienced colleagues, because they have difficulty even reading logs and correctly extracting meaningful fragments from an error message. It's a disaster if experienced colleagues are very busy or absent altogether.
+
 To be fair, it must be said that sometimes errors occur, the messages about which cause difficulties in understanding the causes even for very experienced seniors. And in order to understand such errors, you have to get together with the whole team and arrange a "brainstorming".
 
 The worst thing is when a developer, not finding a clear reason for the error, begins to rush chaotically between the log, Google, appeals to colleagues and dubious experiments, and after some time realizes that he has long been walking in a vicious circle from which there is no way out. Such situations can cause overwork, burnout, depression and disappointment in the profession.
 
 Based on many years of experience, it can be argued that the process of finding the cause of an error and fixing it can be systematized and optimized, and this will significantly reduce the time that has to be spent on debugging software.
+
 I tried to suggest a typical sequence of actions taken when an error occurs, which would allow one to quickly understand the cause in the widest possible range of error diversity.
 
 The sequence of actions, in my opinion, should look as described below.
 
 5.1. Reading and analyzing error messages.
+
 The ability to correctly read error messages is an important skill that a developer does not necessarily have initially, but is developed in the process of work.
 
 5.1.1. Firstly, it is important to understand that when a failure occurs, the list of errors in the log can be very long - up to a hundred lines. As a rule, all these errors are the result of some "primary" error indicated in the first line of the list. It is this error that must be analyzed first and its cause determined.
@@ -511,7 +544,11 @@ Unfortunately, often after reading the message, several guesses about possible c
 2023-11-07 14:20:45.143 DEBUG 9520 --- [nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor   : Using 'application /json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
 
 reading this message, one can assume that the reason is that
-- «Request method ' GET' not supported», that is, an error in typing the keyword “GET” — the letters E or T are typed in the Russian layout; - or that ""ERROR" dispatch for GET "/error", parameters={}", that is, an error was made in the format of the endpoint description for the GET command
+
+- «Request method ' GET' not supported», that is, an error in typing the keyword “GET” — the letters E or T are typed in the Russian layout;
+
+- or that ""ERROR" dispatch for GET "/error", parameters={}", that is, an error was made in the format of the endpoint description for the GET command
+
 - or that "Using 'application/json', given [* /*] and supported [application/json, application/*+json, application/json, application/*+json]», that is, an error was made in the json format of the object received during the call.
 
 In such cases, you need to try to build several versions of the reasons errors and check them all.
@@ -535,27 +572,35 @@ The most unpleasant thing is when no guesses arise at all ... . In such cases, i
 5.5. Searching the Internet for descriptions of similar errors.
 
 5.5.1. Searching for information about errors on the Internet is also associated with certain difficulties. This is due to the fact that the error message in the log can be quite cumbersome.
+
 You can paste the entire message into the search bar (google or yandex or duckduckgo), then the search service itself will decide which keywords have priority and, when issuing, will sort the links in order of relevance to these keywords. Useful links may end up at the bottom of a long list and will not be visible at all.
+
 The best way is to paste into the query only that part of the error message that most likely contains indications of the cause of the error. I usually select the meaningful part of the message by the exclusion method - I discard those parts of the message that contain "standard" "preliminary" mentions of the components used in developing the application, for example ...org.springframework.boot:spring-boot-starter... . After such "cleaning", the message is shortened and becomes more transparent.
 
 5.5.2. Another important aspect is that the formation of a search query (for some time now it has become customary to call prompt engineering) is associated with an understanding of the mechanisms of search services.
 
 Modern search engines use not only giant RegularExpressions, but much more often neural networks implementing NLP (natural language processing) algorithms. These can be relatively simple solutions based on Embedding + CosinusDistance, and it is possible to use architectures such as Generative Pretrained Transformer (GPT).
+
 The simplest and quite effective rule for constructing a query is to arrange keywords in the query in descending order of their importance for the meaning of the query, i.e. the most “important” words should come first, then clarifying ones, and then narrowing the search range. It should be taken into account that the shorter the query, the greater the volume of results - the wider the coverage of potentially relevant links, but also the probability of “overlooking” the most useful link in the set of links issued is higher. On the other hand, the longer the query, the fewer unhelpful links will be returned, but the probability that the search engine will not include the most useful link in the results is also higher.
 
-5.6. Brainstorming. This method should be used when all "imaginable" versions of the failure causes have been checked and none have yielded a result, and the search process has started to "go in circles". During brainstorming, it is necessary to involve a sufficient number of team members in a variety of roles, not only backend programmers, but also frontend developers and testers, SQL developers and even analysts - a fresh look from any of them can draw attention to a factor that was "usually" ignored before and this will become a clue that will allow you to get to the bottom of a deeply hidden cause.
+5.6. Brainstorming. 
+
+This method should be used when all "imaginable" versions of the failure causes have been checked and none have yielded a result, and the search process has started to "go in circles". During brainstorming, it is necessary to involve a sufficient number of team members in a variety of roles, not only backend programmers, but also frontend developers and testers, SQL developers and even analysts - a fresh look from any of them can draw attention to a factor that was "usually" ignored before and this will become a clue that will allow you to get to the bottom of a deeply hidden cause.
 
 5.7. Search for workarounds to solve the problem. Often, the implemented solution, in which a failure occurs that cannot be corrected, is the first thing that came to mind during the first attempt to implement the task, and this solution is not necessarily the best. If you have spent too much time searching for the cause of the failure, then this is a good reason to think about the fact that the problem may have other solutions and it makes sense to try to implement one of them.
 
 6. Error Prevention
 
 6.1. Automatic Syntax Check in the Development Environment.
+
 As already mentioned, all integrated development environments (IDE) implement automatic check of the correctness of the program code syntax, the correctness of the class and component structure, as well as the completeness and consistency of the project as a whole if it uses the appropriate framework (SpringBoot, Vue, Angular, etc.). It is very important to be able to use these features to the fullest extent - before starting the project build, it is absolutely necessary to ensure that the code does not contain any marks indicating any errors. Almost always, when you hover the mouse cursor over an error mark, a context menu appears with possible causes or suggestions for correction. Most often, an error can be corrected simply by selecting one of the items in this menu. However, sometimes situations arise when none of the menu items provides an opportunity to correct the error or at least understand the reason for its occurrence. In this regard, there is one life hack - most often the description of the cause of the error in the IDE context menu is given very briefly, but if you launch the application (or run the build), then during the launch process the "incomprehensible" error will also be detected and a more detailed description of the causes will be displayed in the log, which will allow you to understand what needs to be done to fix this error.
 
 6.3. SonarCube.
+
 When rolling out a project to a stand for its use by a wide range of users, a "code cleanliness" control tool, such as SonarCube, is used at one of the stages in the deployment pipeline. This allows you to identify code fragments in which the developer was careless or deviated from generally accepted development standards or consciously / subconsciously obscured (obfuscated) the code. SonarCube has more than 500 rules, checking which allows you to identify places with poorly written code. Deviations from the rules of clean code are always fertile ground for errors to occur, if not right now, then during future improvements to the application. Following the rules of clean code is absolutely necessary and therefore automatic testing by SonarCube must be included in the deployment pipeline.
 
 6.2. Unit testing.
+
 Writing Unit tests is an important tool for preventing "hidden" errors that can occur "by themselves". For example, careless "data cleaning" in the database can lead to some tests failing. Therefore, well-written Unit tests can "warn" the developer about problems that have arisen at the stage of application launch, when it is not too late to make the necessary corrections, which is not as painful as when a failure occurs during operation and can lead to financial or reputational losses for the customer enterprise, as well as reputational and financial losses for the developer himself.
 
 
