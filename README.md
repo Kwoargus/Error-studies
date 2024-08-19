@@ -351,7 +351,7 @@ In all these sources, Error studies is considered either from a narrow professio
 
 Errors always occur in any activity, unless it is the most primitive type of work. If we take, for example, the work of a developer, a programmer, then with the level of complexity of the tasks that have to be solved, with the multitude of technologies and tools that have to be used, with the complexity of the methods and approaches that have to be used, it is almost impossible to write code “straight away without errors”. Even with the most careful and far-sighted thinking and planning of your work, it is impossible to exclude the occurrence of errors.
 
-The process of error correction can be built in different ways.
+The process of error correction can be built in different ways. 
 
 With an ineffective organization, an employee (for example, a developer) is drowning in myriads of “uncorrectable” errors, suffers for a very long time with the search for their causes, and this takes the lion's share of the entire development time, as a result, deadlines are missed, the code is of low quality, and it does not work well in its practical use (in production).
 
