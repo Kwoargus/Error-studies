@@ -364,7 +364,7 @@ To date, a lot of experience has already been accumulated in error processing, s
 1.3. Subject of study and definition.
 
 Origin of the term - "error" was literally understood as a miss, an inaccurate hit when striking.
-Origin of the word error in the online etymological dictionary of Uspensky L.V. [https://lexicography.online/etymology/о/ожига]
+Origin of the word error in the online etymological dictionary of Uspensky L.V. [https://lexicography.online/etymology/о/ошибка]
 
 In our understanding, an error is an unintentional action or, conversely, failure to perform a necessary action, which entailed the emergence of an obstacle to correct work and obtaining the required correct result. That is, we proceed from the fact that an error always has a reason for its occurrence - errors do not occur by themselves.
 
