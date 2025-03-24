@@ -247,7 +247,7 @@ https://shlahter.livejournal.com/36109.html
 
 читая это сообщение можно предположить, что причина в том, что
 
--  «Request method 'GET' not supported», то есть ошибка в наботе ключевого слова “GET” — буквы E или T набраны в русской раскладке;
+-  «Request method 'GET' not supported», то есть ошибка в наборе ключевого слова “GET” — буквы E или T набраны в русской раскладке;
   
 - или в том что «"ERROR" dispatch for GET "/error", parameters={}», то есть сделана ошибка в формате описания ендпоинта для команды GET
 
